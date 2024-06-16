@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Sayfası</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2>Ödeme Sayfası</h2>
+    
+    <form action="/payment" method="POST">
+        <label for="cardNumber">Kredi Kartı Numarası:</label><br>
+        <input id="cardNumber" class="card" placeholder="Kart Numarası" type="number" autofocus required><br><br>
+        
+        <label for="expiryDate">Son Kullanma Tarihi (MM/YY):</label><br>
+        <input id="expiryDate" name="expiryDate" placeholder="Son Kullanma Tarihi" type="date" required><br><br>
+        
+        <label for="cvv">CVV:</label><br>
+        <input id="cvv" name="cvv" placeholder="CVV" type="number" required><br><br>
+        
+        <input id="pay" type="submit" value="Öde">
+    </form>
+    
+</body>
+</html>

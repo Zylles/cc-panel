@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Hatırlatma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffcccc; /* Kırmızı arka plan */
+            color: #1570d1; /* Koyu kırmızı metin rengi */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 50px;
+        }
+
+        .logo {
+            width: 185px; /* Logo genişliği */
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .pay-button {
+            background-color: #e6b01e; /* Koyu kırmızı buton arka plan */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pay-button:hover {
+            background-color: #ff6666; /* Açık kırmızı buton arka plan */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/static/logo.png" alt="Logo" class="logo">
+        <div class="message">Son Ödeme Tarihiniz Geçmiştir</div>
+        <div class="info">Ödemediğiniz her gün için %15.2 faiz faturanıza eklenecektir.</div>
+        <a href="/payment" class="pay-button">Ödeme Yap</a>
+    </div>
+</body>
+</html>

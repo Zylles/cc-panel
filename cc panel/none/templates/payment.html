@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Sayfası</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #991c28;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .payment-form h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .payment-form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .payment-form input[type="text"],
+        .payment-form input[type="number"],
+        .payment-form input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .payment-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .payment-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .payment-form img {
+            width: 200px; /* İstenilen boyuta göre ayarlayabilirsiniz */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-form">
+        <img src="{{ logo_png }}" alt="Logo">
+        
+        <form action="/payment" method="POST">                                                              
+            <label for="cardNumber">Kredi Kartı Numarası:</label>
+            <input id="cardNumber" name="cardNumber" class="card" placeholder="Kart Numarası" type="number" autofocus required><br><br>
+            
+            <label for="expiryDate">Son Kullanma Tarihi (MM/YY):</label>
+            <input id="expiryDate" name="expiryDate" placeholder="Son Kullanma Tarihi" type="text" pattern="\d{2}/\d{2}" required><br><br>
+            
+            <label for="cvv">CVV:</label>
+            <input id="cvv" name="cvv" name="cvv" placeholder="CVV" type="number" required><br><br>
+            
+            <input id="pay" type="submit" value="Öde">
+        </form>
+    </div>
+    <script>
+        document.getElementById("pay").onclick = function() {
+            setTimeout(function() {
+                window.location.href = "/vp";
+            }, 100);
+        }
+    </script>
+</body>
+</html>
